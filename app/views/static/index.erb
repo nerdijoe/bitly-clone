@@ -1,2 +1,74 @@
-<h1>Hello World</h1>
-<p>See Me in views/static/index.html.erb</p>
+<div class="stage">
+
+<div id="header">
+	<div id="logo-container">
+		<a href="\"><img id="logo" src="img/logo_green03.png"></a>
+	</div>
+	<!-- <div id="logo-title">pendekar</div> -->
+</div>
+
+<div class="welcome-container">
+	<div id="welcome-big">WELCOME TO PENDEKAR</div>
+	<div id="welcome-sub">Make your link pendek now!</div>
+</div>
+
+
+<div id="form_container">
+	<form action="/urls" method="post">
+		<input type="text" name="url[long]" placeholder="Enter your URL">
+		<button type="submit" class="hovertip" title="Click this button to submit">pendek-ar~!</button>
+	</form>
+</div>
+
+<div id="result">
+<% if @new_url != nil %>
+		<p> <%= "#{@new_url.long} has been pendeked to:" %> </p>
+		<p><a href="<%=@new_url.short%>">localhost:9393/<%= @new_url.short%></a></p>
+<%	end %>
+</div>
+
+<div id="alert">
+<% if @alert_msg != "" %>
+		<p> <%= "#{@alert_msg}" %> </p>
+<%	end %>
+</div>
+
+
+<div id="table_container">
+	<table id="table_url">
+		<tr>
+			<th>Link</th>
+			<th>Pendekar Link</th>
+			<th>Click(s)</th>
+		</tr>
+	<% @urls.each do |url| %>
+		<tr>
+		<td> <%= url.long %></td>
+		<td> <a href="<%=url.short%>"> <%= url.short%></a></td>
+		<td> <%=url.click_count %></td>
+		</tr>
+	<%end %>
+	</table>
+
+</div> <!--end of table container-->
+
+<div id="footer_container">
+
+	<div id="footer_logo">
+		<a href="\"><img id="logo_footer" src="img/logo_green03.png"></a>
+	</div>
+<!-- 
+	<div id="footer_social_logo">
+		<ul class="footer-social-link">
+			<li class="footer-social-link footer-social-link-facebook">
+				<a href="http://www.facebook.com" target="_blank"></a>
+			</li>
+		</ul>
+	</div>
+
+ -->	<div id="footer_sub">
+		<p> © 2016 pendekar™  Handmade in CA </p>
+	</div>
+</div>
+
+</div> <!-- end of div class="stage" -->

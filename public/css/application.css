@@ -1,0 +1,260 @@
+
+body {
+	background-color: powderblue;
+	font-family: Arial, Helvetica, sans-serif;
+	background-image: url("/img/beach.jpg");
+	background-position: left top;
+
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+
+h1 {
+	/*color: blue;*/
+
+}
+
+#header{
+	margin: auto;
+/*	text-align: center;*/
+	height: 150px;
+}
+
+#logo-container{
+	/*float:left;*/
+	width: 50px;
+	margin: auto;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+#logo { 
+	width: 100px;
+}
+#logo-title {
+	float:left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+	font-size: 30px;
+	padding-top: 15px;
+
+}
+
+
+.welcome-container {
+	width: 60%;
+	height: 80px;
+	margin: auto;
+	text-align: center
+}
+#welcome-big {
+	font-size: 30px;
+	font-weight: bold;
+}
+#welcome-sub {
+	font-size: 20px;
+	font-weight: 100;
+}
+
+.stage {
+	background-color: white;
+	width: 80%;
+	margin: auto;
+	/*background: rgba(255, 255, 204, 0.95);*/
+	padding-top: 10px;
+  border-radius: 5px;
+
+	/*255, 255, 204
+		179, 218, 255
+	*/
+}
+
+
+
+#alert {
+  max-width: 500px;
+  margin: 5px auto;
+  padding: auto;
+  background: #f4f7f8;
+  border-radius: 8px;
+
+
+}
+#alert p {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	font-size: 18px;
+	color: red;
+
+}
+
+#result {
+  max-width: 500px;
+  margin: 10px auto;
+  padding: auto;
+  background: #f4f7f8;
+  border-radius: 8px;
+
+	color: green;
+}
+#result p {
+	text-align: center;
+	padding-top: 5px;
+	padding-bottom: 5px;
+
+	font-size: 18px;
+
+}
+#form_container {
+	width: 70%;
+	margin: auto;
+	text-align: center;
+
+}
+
+form {
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 20px 20px;
+  background: #f4f7f8;
+  border-radius: 8px;
+}
+input {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding: 15px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #8a97a0;
+  box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+  margin-bottom: 30px;
+}
+button {
+/*  padding: 19px 39px 18px 39px;*/  
+	padding: 10px 30px 10px 30px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 25px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 80%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;
+}
+
+
+#table_container{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+
+	width: 80%;
+	margin: auto;
+}
+
+#table_url{
+	width: 100%;
+	border-collapse: collapse;
+	font-size: 14px;
+	/*margin: auto;*/
+	/*table-layout: fixed;*/
+}
+#table_url th {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    text-align: left;
+    background-color: #4bc970;
+    color: white;
+}
+tr:nth-child(even){
+	/*background-color: #fcfcfc;*/
+}
+tr:hover {
+	background-color: #ddd;
+}
+td {
+	border-bottom: 1px solid #ddd;
+	height: 20px;
+	padding: 5px;
+	font-size: 12px;
+	/*text-align: left;*/
+}
+
+
+#footer_container {
+	width: 80%;
+	margin: auto;
+
+	padding: 10px;
+}
+
+#footer_logo {
+	text-align: center;
+	width: 30px;
+	margin: auto;
+}
+
+#footer_social_logo {
+	width: 50%;
+	margin: auto;
+	text-align: center;
+}
+.footer-social-link-facebook {
+		background-image: url("/img/social_logo.png");
+    background-position: 0 0;
+    background-position-x: 0px;
+    background-position-y: 0px;
+}
+.footer-social-link-twitter {
+		background-image: url("/img/social_logo.png");
+    background-position: 0 -32px;
+    background-position-x: 0px;
+    background-position-y: -32px;
+}
+.footer-social-link {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+/*    margin: 0 2.4px 0 0;
+    margin-top: 0px;
+    margin-right: 2.4px;
+    margin-bottom: 0px;
+    margin-left: 0px;*/
+    /*background-image: url("/img/social_logo.png");*/
+}
+
+#footer_sub {
+	width: 300px;
+	margin: auto;
+}
+#footer_sub p {
+	font-size: 15px;
+	text-align: center;
+}
+#logo_footer {
+	width: 50px;
+}
+
+
+.tooltip {
+	display:none;
+	position:absolute;
+	border:1px solid #333;
+	background-color:#161616;
+	border-radius:5px;
+	padding:10px;
+	color:#fff;
+	font-size:12px Arial;
+}
