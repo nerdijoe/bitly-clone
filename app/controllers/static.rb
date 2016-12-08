@@ -33,8 +33,6 @@ post '/urls' do
 	  	@alert_msg = "'#{params[:url][:long]}'' is not a valid URL."
 	end
 
-	
-
   @urls = Url.all
 	erb :"static/index"
 
