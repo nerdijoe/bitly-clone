@@ -34,6 +34,7 @@ $(document).ready(function(){
 			console.log(response)
 			
 			var result = jQuery.parseJSON(response)
+			debugger
 
 			if (result.alert_msg) {
 				$('#alert_ajax').text(result.alert_msg)
@@ -44,8 +45,11 @@ $(document).ready(function(){
 				
 				console.log("save")
 
-				display_result(result)
-				update_table(result)
+				display_result(result.url_object)
+
+				if(result.existed == "0") {
+					update_table(result.url_object)
+				}
 			}
 		 
 			console.log("end of ajax form submit")
@@ -74,8 +78,10 @@ $(document).ready(function(){
 				
 				console.log("save")
 			
-				display_result(result)
-				update_table(result)
+				display_result(result.url_object)
+				if(result.existed == "0") {
+					update_table(result.url_object)
+				}
 			}
 		 
 			console.log("end of ajax form submit")
@@ -94,7 +100,7 @@ $(document).ready(function(){
 		// $('#result_ajax').empty()
 		$('#result_ajax').show()
 
-
+		debugger
 		$('#result_subtext').empty()
 		$('#result_subtext').append(
 			'<p>' + result.long + '</p>'

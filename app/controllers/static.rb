@@ -21,7 +21,7 @@ post '/urls' do
 	# @urls = Url.all
 
 	if Url.valid_url?(params[:url][:long])
-		@new_url = Url.new(params[:url])
+    @new_url = Url.find_or_initialize_by(params[:url])
 	  if @new_url.save 
 	  	@alert_msg = ""  	
 	  else
@@ -46,24 +46,33 @@ post '/ajax' do
 	# And Ruby will return the value to JQuery 
 	# from the the last line of the method.
 
-	p "static ajax"
-	# byebug
+	p "ajax"
+	
 	if Url.valid_url?(params[:url][:long])
-		@new_url = Url.new(params[:url])
-	  if @new_url.save 
-	  	@alert_msg = "" 
-	  	@new_url.to_json 	
+		# @new_url = Url.new(params[:url])
+
+    # will not create a new object if we can find in the table
+    @new_url = Url.find_or_initialize_by(params[:url])
+		
+		# don't update table if it is existed
+		if @new_url.id == nil
+		  if @new_url.save 
+		  	# @new_url.to_json
+		  	{existed: "0", url_object: @new_url}.to_json
+		  else
+		  	byebug
+		  	# p @new_url.errors.messages
+		  	# @alert_msg = '{"alert_msg": "There is a problem with your link"}'
+				{alert_msg: "There is a problem with your link"}.to_json
+
+	  	end
 	  else
-	  	# p @new_url.errors.messages
 	  	byebug
-	  	p @new_url.errors
-	  	@alert_msg = '{"alert_msg": "There is a problem with your link"}'
-
-  	end
-
+	  	{existed: "1", url_object: @new_url}.to_json
+	  end
 	else
-	  	# @alert_msg = "'#{params[:url][:long]}'' is not a valid URL."
-			@alert_msg = '{"alert_msg": "Not a valid URL"}'
+			# @alert_msg = '{"alert_msg": "Not a valid URL"}'
+			{alert_msg: "Not a valid URL"}.to_json
 	  	
 	end
 
@@ -79,16 +88,26 @@ post '/ajax_key' do
 	p "ajax KEY"
 	# byebug
 	if Url.valid_url?(params[:url][:long])
-		@new_url = Url.new(params[:url])
-	  if @new_url.save 
-	  	@alert_msg = "" 
-	  	@new_url.to_json 	
-	  else
-	  	# p @new_url.errors.messages
-	  	byebug
-	  	p @new_url.errors	  	
-			@alert_msg = '{"alert_msg": "There is a problem with your link"}'
-  	end
+		# @new_url = Url.new(params[:url])
+    # will not create a new object if we can find in the table
+    @new_url = Url.find_or_initialize_by(params[:url])
+	  
+		if @new_url.id == nil
+		  if @new_url.save 
+		  	# @alert_msg = "" 
+		  	# @new_url.to_json 	
+		  	{existed: "0", url_object: @new_url}.to_json
+		  else
+		  	# p @new_url.errors.messages
+		  	byebug
+		  	# p @new_url.errors	  	
+				# @alert_msg = '{"alert_msg": "There is a problem with your link"}'
+				{alert_msg: "There is a problem with your link"}.to_json
+	  	end
+		else
+			byebug
+	  	{existed: "1", url_object: @new_url}.to_json
+		end
 
   else
   	@alert_msg = nil
