@@ -15,6 +15,20 @@ h1 {
 
 }
 
+.stage {
+	background-color: white;
+	width: 80%;
+	margin: auto;
+	/*background: rgba(255, 255, 204, 0.95);*/
+	padding-top: 10px;
+  border-radius: 5px;
+
+	/*255, 255, 204
+		179, 218, 255
+	*/
+}
+
+
 #header{
 	margin: auto;
 /*	text-align: center;*/
@@ -57,25 +71,12 @@ h1 {
 	font-weight: 100;
 }
 
-.stage {
-	background-color: white;
-	width: 80%;
-	margin: auto;
-	/*background: rgba(255, 255, 204, 0.95);*/
-	padding-top: 10px;
-  border-radius: 5px;
-
-	/*255, 255, 204
-		179, 218, 255
-	*/
-}
 
 
 
 #alert {
-  max-width: 500px;
+  max-width: 80%;
   margin: 5px auto;
-  padding: auto;
   background: #f4f7f8;
   border-radius: 8px;
 
@@ -88,11 +89,18 @@ h1 {
 
 	font-size: 18px;
 	color: red;
+}
+
+#alert_ajax {
+	text-align: center;
+	font-size: 18px;
+	color: red;
 
 }
 
+
 #result {
-  max-width: 500px;
+  width: 80%;
   margin: 10px auto;
   padding: auto;
   background: #f4f7f8;
@@ -108,15 +116,45 @@ h1 {
 	font-size: 18px;
 
 }
+#result_ajax {
+	text-align: center;
+
+}
+#result_subtext p {
+	font-size: 14px;
+	font-weight: lighter;
+	padding-top: 10px;
+}
+
+#result_short p {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#result_short a:link, a:visited {
+    /*background-color: #f44336;*/
+    color: #4bc970;
+    padding-bottom: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+}
+
+#result_short a:hover, a:active {
+    /*background-color: red;*/
+    color: #ffe300;
+}
+
+
 #form_container {
-	width: 70%;
+	width: 80%;
 	margin: auto;
 	text-align: center;
 
 }
 
 form {
-  max-width: 300px;
+  /*max-width: 80%;*/
   margin: 10px auto;
   padding: 20px 20px;
   background: #f4f7f8;
@@ -139,7 +177,8 @@ input {
 button {
 /*  padding: 19px 39px 18px 39px;*/  
 	padding: 10px 30px 10px 30px;
-  color: #FFF;
+  /*color: #FFF;*/
+  color: #ffe300;
   background-color: #4bc970;
   font-size: 25px;
   text-align: center;
@@ -248,13 +287,29 @@ td {
 }
 
 
-.tooltip {
-	display:none;
-	position:absolute;
-	border:1px solid #333;
-	background-color:#161616;
-	border-radius:5px;
-	padding:10px;
-	color:#fff;
-	font-size:12px Arial;
+#help_msg {
+	width: 60%;
+	height: 80px;
+	margin: auto;
+	text-align: center
+}
+
+#help_toggle{
+/*  padding: 19px 39px 18px 39px;*/  
+/*	padding: 10px 30px 10px 30px;
+  color: #FFF;
+  background-color: #4bc970;
+  font-size: 10px;
+  text-align: center;
+  font-style: normal;
+  font-weight: bold;
+  border-radius: 5px;
+  width: 80%;
+  border: 1px solid #3ac162;
+  border-width: 1px 1px 3px;
+  box-shadow: 0 -1px 0 rgba(255,255,255,0.1) inset;
+  margin-bottom: 10px;*/
+  width: 30%;
+  margin: auto;
+  text-align: center;
 }

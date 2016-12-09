@@ -6,7 +6,7 @@
 | short_link |
 +------------+
 =end
-
+require 'securerandom'
 
 class Url < ActiveRecord::Base
 	before_create :shorten
@@ -14,12 +14,13 @@ class Url < ActiveRecord::Base
 
 	validates :long, presence: true
 
-
 	# This is Sinatra! Remember to create a migration!
 	def shorten
 		p "** #{self.id} | #{self.long}"
 		# self.short = Base64.urlsafe_encode64("rudy" + "[#{self.id}]")
-		self.short = Base64.urlsafe_encode64("rudy" + Time.now.to_i.to_s)
+		# self.short = Base64.urlsafe_encode64("rudy" + Time.now.to_i.to_s)
+		self.short = Base64.urlsafe_encode64(Time.now.to_i.to_s + SecureRandom.base64(5))
+
 		# can use SecureRandom
 
 		p "**** #{self.short}"
@@ -38,6 +39,12 @@ class Url < ActiveRecord::Base
 		else
 			return false
 		end
+	end
+
+	def self.seed_shorten
+		# p "seed shorten"
+		short = Base64.urlsafe_encode64(Time.now.to_i.to_s + SecureRandom.base64(5))
+		# p short
 	end
 
 end

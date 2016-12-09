@@ -1,6 +1,8 @@
 require 'rake'
 require 'rspec/core/rake_task'
 
+require_relative 'db/seeds'
+
 # Include environment settings
 require ::File.expand_path('../config/environments/init', __FILE__)
 
@@ -120,7 +122,8 @@ namespace :db do
 
 	desc "Populate the database with dummy data by running db/seeds.rb"
 	task :seed do
-		require APP_ROOT.join('db', 'seeds.rb')
+		# require APP_ROOT.join('db', 'seeds.rb')
+		UrlImporter.import('db/urls')
 	end
 
 	desc "Returns the current schema version number"
