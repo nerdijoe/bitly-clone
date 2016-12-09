@@ -40,7 +40,9 @@
 	<% if @alert_msg != "" %>
 			<p> <%= "#{@alert_msg}" %> </p>
 	<% end %>
-	<div id="alert_ajax" class="clickable"></div>
+	<div id="alert_ajax" class="clickable">
+		<div id="alert_msg"></div>
+	</div>
 </div>
 
 
@@ -62,6 +64,11 @@
 
 </div> <!--end of table container-->
 
+
+
+</div> <!-- end of div class="stage" -->
+
+
 <div id="footer_container">
 
 	<div id="footer_logo">
@@ -82,4 +89,6 @@
 	</div>
 </div>
 
-</div> <!-- end of div class="stage" -->
+<div id="footer_container_out">
+
+</div>

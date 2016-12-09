@@ -48,6 +48,9 @@ post '/ajax' do
 
 	p "ajax"
 	
+	# strip whitespace
+	params[:url][:long].strip!
+	
 	if Url.valid_url?(params[:url][:long])
 		# @new_url = Url.new(params[:url])
 
@@ -72,7 +75,7 @@ post '/ajax' do
 	  end
 	else
 			# @alert_msg = '{"alert_msg": "Not a valid URL"}'
-			{alert_msg: "Not a valid URL"}.to_json
+			{alert_msg: "Invalid URL"}.to_json
 	  	
 	end
 
@@ -87,6 +90,7 @@ post '/ajax_key' do
 
 	p "ajax KEY"
 	# byebug
+	params[:url][:long].strip!
 	if Url.valid_url?(params[:url][:long])
 		# @new_url = Url.new(params[:url])
     # will not create a new object if we can find in the table

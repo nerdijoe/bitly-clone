@@ -37,9 +37,9 @@ $(document).ready(function(){
 			debugger
 
 			if (result.alert_msg) {
-				$('#alert_ajax').text(result.alert_msg)
-				$('#alert_ajax').show()
-
+				// $('#alert_ajax').text(result.alert_msg)
+				// $('#alert_ajax').show()
+				display_error(result)
 			}
 			else {
 				
@@ -120,6 +120,15 @@ $(document).ready(function(){
 			'<td>' + result.click_count + '</td></tr>')
 	}
 
-
+	function display_error(result) {
+		$('#result_ajax').hide()
+		$('#alert_ajax').show()
+		
+		$('#alert_msg').empty()
+		// $('#alert_msg').text(result.alert_msg)
+		$('#alert_msg').append(
+					'<p>' + result.alert_msg + '</p>'
+					)
+	}
 
 }) // end of document ready
