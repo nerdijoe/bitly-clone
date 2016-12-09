@@ -1,12 +1,13 @@
 
 body {
-	background-color: powderblue;
+	background-color: white;
 	font-family: Arial, Helvetica, sans-serif;
-	background-image: url("/img/beach.jpg");
+	/*background-image: url("/img/beach.jpg");*/
 	background-position: left top;
-
-	padding-top: 10px;
+	margin: 0;
+/*	padding-top: 10px;
 	padding-bottom: 20px;
+*/
 }
 
 
@@ -15,14 +16,20 @@ h1 {
 
 }
 
-.stage {
-	background-color: white;
-	width: 80%;
-	margin: auto;
-	/*background: rgba(255, 255, 204, 0.95);*/
-	padding-top: 10px;
-	padding-bottom: 10px;
+.verge{
+		background-image: url("/img/beach.jpg");
+		padding-bottom: 50px;
+}
 
+.stage {
+	/*background-color: white;*/
+	/*width: 80%;*/
+	width: 100%;
+	/*margin: auto;*/
+	/*background: rgba(255, 255, 204, 0.95);*/
+/*	padding-top: 10px;
+	padding-bottom: 10px;
+*/
   border-radius: 5px;
 
 	/*255, 255, 204
@@ -64,14 +71,19 @@ h1 {
 	height: 80px;
 	margin: auto;
 	text-align: center
+
 }
 #welcome-big {
 	font-size: 30px;
 	font-weight: bold;
+	color: white;
+
 }
 #welcome-sub {
 	font-size: 20px;
 	font-weight: 100;
+	color: white;
+
 }
 
 
@@ -268,7 +280,8 @@ td {
 
 
 #footer_container {
-	width: 80%;
+	background-color: powderblue;
+	/*width: 80%;*/
 	margin: auto;
 
 	padding: 10px;
