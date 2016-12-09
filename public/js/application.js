@@ -122,9 +122,13 @@ $(document).ready(function(){
 
 	function display_error(result) {
 		$('#result_ajax').hide()
-
-		$('#alert_ajax').text(result.alert_msg)
 		$('#alert_ajax').show()
+		
+		$('#alert_msg').empty()
+		// $('#alert_msg').text(result.alert_msg)
+		$('#alert_msg').append(
+					'<p>' + result.alert_msg + '</p>'
+					)
 	}
 
 }) // end of document ready

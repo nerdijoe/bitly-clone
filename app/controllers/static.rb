@@ -75,7 +75,7 @@ post '/ajax' do
 	  end
 	else
 			# @alert_msg = '{"alert_msg": "Not a valid URL"}'
-			{alert_msg: "Not a valid URL"}.to_json
+			{alert_msg: "Invalid URL"}.to_json
 	  	
 	end
 
