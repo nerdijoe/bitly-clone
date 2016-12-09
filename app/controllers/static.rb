@@ -38,6 +38,70 @@ post '/urls' do
 
 end
 
+
+
+post '/ajax' do
+	# JQuery will receive the return value of this method
+	# in the response 
+	# And Ruby will return the value to JQuery 
+	# from the the last line of the method.
+
+	p "static ajax"
+	# byebug
+	if Url.valid_url?(params[:url][:long])
+		@new_url = Url.new(params[:url])
+	  if @new_url.save 
+	  	@alert_msg = "" 
+	  	@new_url.to_json 	
+	  else
+	  	# p @new_url.errors.messages
+	  	byebug
+	  	p @new_url.errors
+	  	@alert_msg = '{"alert_msg": "There is a problem with your link"}'
+
+  	end
+
+	else
+	  	# @alert_msg = "'#{params[:url][:long]}'' is not a valid URL."
+			@alert_msg = '{"alert_msg": "Not a valid URL"}'
+	  	
+	end
+
+end
+
+
+post '/ajax_key' do
+	# JQuery will receive the return value of this method
+	# in the response 
+	# And Ruby will return the value to JQuery 
+	# from the the last line of the method.
+
+	p "ajax KEY"
+	# byebug
+	if Url.valid_url?(params[:url][:long])
+		@new_url = Url.new(params[:url])
+	  if @new_url.save 
+	  	@alert_msg = "" 
+	  	@new_url.to_json 	
+	  else
+	  	# p @new_url.errors.messages
+	  	byebug
+	  	p @new_url.errors	  	
+			@alert_msg = '{"alert_msg": "There is a problem with your link"}'
+  	end
+
+  else
+  	@alert_msg = nil
+	end
+
+end
+
+
+
+
+
+
+
 get '/:short_url' do
 	# redirect to appropirate "long" URL
 	# this will fetch the short_url in the table and redirect it to the long link

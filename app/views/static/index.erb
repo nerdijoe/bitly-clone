@@ -15,22 +15,29 @@
 
 <div id="form_container">
 	<form action="/urls" method="post">
-		<input type="text" name="url[long]" placeholder="Enter your URL">
-		<button type="submit" class="hovertip" title="Click this button to submit">pendek-ar~!</button>
+		<input id="input_url" type="text" name="url[long]" placeholder="Enter your URL">
+		<button type="submit" title="Click this button to submit">pendek-ar~!</button>
 	</form>
 </div>
 
+<!-- <div id="help_msg">
+	<div id="help_toggle">Toggle</div>
+	<p id="help_toggle_msg" style="display: none">enter your link </p>
+</div> -->
+
 <div id="result">
-<% if @new_url != nil %>
-		<p> <%= "#{@new_url.long} has been pendeked to:" %> </p>
-		<p><a href="<%=@new_url.short%>">localhost:9393/<%= @new_url.short%></a></p>
-<%	end %>
+	<% if @new_url != nil %>
+			<p> <%= "#{@new_url.long} has been pendeked to:" %> </p>
+			<p><a href="<%=@new_url.short%>">localhost:9393/<%= @new_url.short%></a></p>
+	<%	end %>
+	<div id="result_ajax" class="clickable"></div>
 </div>
 
 <div id="alert">
-<% if @alert_msg != "" %>
-		<p> <%= "#{@alert_msg}" %> </p>
-<%	end %>
+	<% if @alert_msg != "" %>
+			<p> <%= "#{@alert_msg}" %> </p>
+	<% end %>
+	<div id="alert_ajax" class="clickable"></div>
 </div>
 
 
@@ -42,10 +49,10 @@
 			<th>Click(s)</th>
 		</tr>
 	<% @urls.each do |url| %>
-		<tr>
-		<td> <%= url.long %></td>
-		<td> <a href="<%=url.short%>"> <%= url.short%></a></td>
-		<td> <%=url.click_count %></td>
+		<tr class="clickable">
+			<td> <%= url.long %></td>
+			<td> <a href="<%=url.short%>"> <%= url.short%></a></td>
+			<td> <%=url.click_count %></td>
 		</tr>
 	<%end %>
 	</table>
@@ -66,7 +73,8 @@
 		</ul>
 	</div>
 
- -->	<div id="footer_sub">
+ -->	
+ <div id="footer_sub">
 		<p> © 2016 pendekar™  Handmade in CA </p>
 	</div>
 </div>

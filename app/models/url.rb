@@ -14,7 +14,6 @@ class Url < ActiveRecord::Base
 
 	validates :long, presence: true
 
-
 	# This is Sinatra! Remember to create a migration!
 	def shorten
 		p "** #{self.id} | #{self.long}"
