@@ -37,24 +37,8 @@ $(document).ready(function(){
 			else {
 				
 				console.log("save")
-				//display result message
-				// var res_msg = "your new link is " + '<a href="' + result.short + '">' + result.short + '</a>'
-				// $('#result_ajax').text(res_msg)
-
-				// $('#result_ajax').empty()
-				// $('#result_ajax').show()
-				// $('#result_ajax').append("<p> your new link is: </p>" 
-				// 	+ '<a href="' + result.short + '">' + result.short + '</a>')
-				debugger
 
 				display_result(result)
-
-				debugger
-				//update table
-				// $('#table_url').append('<tr class="clickable"><td>' + result.long + '</td>' + 
-				// 	'<td><a href="' + result.short + '">' + result.short + '</a></td>' +
-				// 	'<td>' + result.click_count + '</td></tr>')
-
 				update_table(result)
 			}
 		 
@@ -62,21 +46,6 @@ $(document).ready(function(){
 		})
 	})
 
-	// reusable functions
-	// display result msg
-	function display_result(result){
-		$('#result_ajax').empty()
-		$('#result_ajax').show()
-		$('#result_ajax').append("<p> your new link is: </p>" 
-			+ '<a href="' + result.short + '">' + result.short + '</a>')
-	}
-
-	// update table with the new inserted row
-	function update_table(result) {
-		$('#table_url').append('<tr class="clickable"><td>' + result.long + '</td>' + 
-			'<td><a href="' + result.short + '">' + result.short + '</a></td>' +
-			'<td>' + result.click_count + '</td></tr>')
-	}
 
 
 	// **********************************************************
@@ -93,26 +62,14 @@ $(document).ready(function(){
 			data: $('form').serialize()
 		}).done(function(response){
 			console.log(response)
-			
-
 
 			if (response) {
 				var result = jQuery.parseJSON(response)
 				
 				console.log("save")
-				//show message
-				// var res_msg = "your new link is " + '<a href="' + result.short + '">' + result.short + '</a>'
-				// $('#result_ajax').text(res_msg)
-				$('#result_ajax').empty()
-				$('#result_ajax').show()
-				$('#result_ajax').append("<p> your new link is: </p>" 
-					+ '<a href="' + result.short + '">' + result.short + '</a>')
-
-				debugger
-				//update table
-				$('#table_url').append('<tr class="clickable"><td>' + result.long + '</td>' + 
-					'<td><a href="' + result.short + '">' + result.short + '</a></td>' +
-					'<td>' + result.click_count + '</td></tr>')
+			
+				display_result(result)
+				update_table(result)
 			}
 		 
 			console.log("end of ajax form submit")
@@ -121,6 +78,23 @@ $(document).ready(function(){
 
 
 	})
+
+	// ***********************************************************
+	// Reusable functions
+	// display result msg
+	function display_result(result){
+		$('#result_ajax').empty()
+		$('#result_ajax').show()
+		$('#result_ajax').append("<p> your new link is: </p>" 
+			+ '<a href="' + result.short + '">' + result.short + '</a>')
+	}
+
+	// update table with the new inserted row
+	function update_table(result) {
+		$('#table_url').append('<tr class="clickable"><td>' + result.long + '</td>' + 
+			'<td><a href="' + result.short + '">' + result.short + '</a></td>' +
+			'<td>' + result.click_count + '</td></tr>')
+	}
 
 
 

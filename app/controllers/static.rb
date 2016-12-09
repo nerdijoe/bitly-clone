@@ -120,8 +120,11 @@ get '/:short_url' do
 
 		ori_link.add_click_count
 		ori_link.save
+		
+		byebug
 
-		redirect to("http://" + ori_link.long)
+		# redirect to("https://" + ori_link.long)
+		redirect to("https://" + ori_link.long.gsub(/(http)[s]*[:](\/\/)/, ''))
 	else
 		@urls = Url.all
 		@alert_msg = "invalid short url"
