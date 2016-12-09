@@ -37,9 +37,9 @@ $(document).ready(function(){
 			debugger
 
 			if (result.alert_msg) {
-				$('#alert_ajax').text(result.alert_msg)
-				$('#alert_ajax').show()
-
+				// $('#alert_ajax').text(result.alert_msg)
+				// $('#alert_ajax').show()
+				display_error(result)
 			}
 			else {
 				
@@ -120,6 +120,11 @@ $(document).ready(function(){
 			'<td>' + result.click_count + '</td></tr>')
 	}
 
+	function display_error(result) {
+		$('#result_ajax').hide()
 
+		$('#alert_ajax').text(result.alert_msg)
+		$('#alert_ajax').show()
+	}
 
 }) // end of document ready
