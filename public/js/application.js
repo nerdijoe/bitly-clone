@@ -34,7 +34,6 @@ $(document).ready(function(){
 			console.log(response)
 			
 			var result = jQuery.parseJSON(response)
-			debugger
 
 			if (result.alert_msg) {
 				// $('#alert_ajax').text(result.alert_msg)
@@ -100,7 +99,7 @@ $(document).ready(function(){
 		// $('#result_ajax').empty()
 		$('#result_ajax').show()
 
-		debugger
+		// debugger
 		$('#result_subtext').empty()
 		$('#result_subtext').append(
 			'<p>' + result.long + '</p>'
