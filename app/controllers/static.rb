@@ -60,14 +60,14 @@ post '/ajax' do
 		  	# @new_url.to_json
 		  	{existed: "0", url_object: @new_url}.to_json
 		  else
-		  	byebug
+		  	# byebug
 		  	# p @new_url.errors.messages
 		  	# @alert_msg = '{"alert_msg": "There is a problem with your link"}'
 				{alert_msg: "There is a problem with your link"}.to_json
 
 	  	end
 	  else
-	  	byebug
+	  	# byebug
 	  	{existed: "1", url_object: @new_url}.to_json
 	  end
 	else
@@ -99,13 +99,12 @@ post '/ajax_key' do
 		  	{existed: "0", url_object: @new_url}.to_json
 		  else
 		  	# p @new_url.errors.messages
-		  	byebug
 		  	# p @new_url.errors	  	
 				# @alert_msg = '{"alert_msg": "There is a problem with your link"}'
 				{alert_msg: "There is a problem with your link"}.to_json
 	  	end
 		else
-			byebug
+			# byebug
 	  	{existed: "1", url_object: @new_url}.to_json
 		end
 
@@ -140,7 +139,7 @@ get '/:short_url' do
 		ori_link.add_click_count
 		ori_link.save
 		
-		byebug
+		# byebug
 
 		# redirect to("https://" + ori_link.long)
 		redirect to("https://" + ori_link.long.gsub(/(http)[s]*[:](\/\/)/, ''))
