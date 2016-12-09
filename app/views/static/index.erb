@@ -30,7 +30,10 @@
 			<p> <%= "#{@new_url.long} has been pendeked to:" %> </p>
 			<p><a href="<%=@new_url.short%>">localhost:9393/<%= @new_url.short%></a></p>
 	<%	end %>
-	<div id="result_ajax" class="clickable"></div>
+	<div id="result_ajax" class="doubleclick">
+		<div id="result_subtext"></div>
+		<div id="result_short"></div>
+	</div>
 </div>
 
 <div id="alert">

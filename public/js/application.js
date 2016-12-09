@@ -10,6 +10,12 @@ $(document).ready(function(){
 	    $(this).hide()
 	})
 
+	$('.doubleclick').dblclick(function(){
+			console.log("hide!")
+	    $(this).hide()
+	})
+
+
 	$('#help_toggle').click(function(){
 		console.log("toggle!")
 		$('#help_toggle_msg').toggle()
@@ -83,10 +89,22 @@ $(document).ready(function(){
 	// Reusable functions
 	// display result msg
 	function display_result(result){
-		$('#result_ajax').empty()
+		$('#alert_ajax').hide()
+
+		// $('#result_ajax').empty()
 		$('#result_ajax').show()
-		$('#result_ajax').append("<p> your new link is: </p>" 
-			+ '<a href="' + result.short + '">' + result.short + '</a>')
+
+
+		$('#result_subtext').empty()
+		$('#result_subtext').append(
+			'<p>' + result.long + '</p>'
+			)
+
+		
+		$('#result_short').empty()
+		$('#result_short').append(
+			'<p> Pendekar link: </p>' +
+			'<a href="' + result.short + '">' + result.short + '</a>')
 	}
 
 	// update table with the new inserted row
