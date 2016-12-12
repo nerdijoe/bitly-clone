@@ -128,6 +128,9 @@ $(document).ready(function(){
 		$('#alert_msg').append(
 					'<p>' + result.alert_msg + '</p>'
 					)
+
+		// $('#alert_ajax').find('#alert_msg').slideToggle(300, 'swing');
+
 	}
 
 }) // end of document ready

@@ -1,5 +1,7 @@
 <div class="stage">
 
+<div class="verge">
+
 <div id="header">
 	<div id="logo-container">
 		<a href="\"><img id="logo" src="img/logo_green03.png"></a>
@@ -45,15 +47,20 @@
 	</div>
 </div>
 
+</div> <!-- end of verge-->
+
+
 
 <div id="table_container">
 	<table id="table_url">
+		
 		<tr>
-			<th class="col_link">Link</th>
-			<th class="col_pendekar">Pendekar Link</th>
-			<th class="col_click">Click(s)</th>
+			<th class="col_link"></th>
+			<th class="col_pendekar"></th>
+			<th class="col_click"></th>
 		</tr>
-	<% @urls.each do |url| %>
+	
+ <% @urls.each do |url| %>
 		<tr class="clickable">
 			<td> <%= url.long %></td>
 			<td> <a href="<%=url.short%>"> <%= url.short%></a></td>
