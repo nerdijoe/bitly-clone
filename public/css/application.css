@@ -18,11 +18,12 @@ h1 {
 
 .verge{
 		background-image: url("/img/beach.jpg");
-		padding-bottom: 50px;
+		padding-bottom: 20px;
 }
 
 .stage {
-	/*background-color: white;*/
+	/*background-color: #ffffe5;*/
+	background: rgba(255, 255, 229, 0.3);
 	/*width: 80%;*/
 	width: 100%;
 	/*margin: auto;*/
@@ -68,7 +69,7 @@ h1 {
 
 .welcome-container {
 	width: 60%;
-	height: 80px;
+	height: auto;
 	margin: auto;
 	text-align: center
 
@@ -80,7 +81,7 @@ h1 {
 
 }
 #welcome-sub {
-	font-size: 20px;
+	font-size: 18px;
 	font-weight: 100;
 	color: white;
 
@@ -166,7 +167,7 @@ h1 {
 
 
 #form_container {
-	width: 80%;
+	width: 90%;
 	margin: auto;
 	text-align: center;
 
@@ -175,7 +176,7 @@ h1 {
 form {
   /*max-width: 80%;*/
   margin: 10px auto;
-  padding: 20px 20px;
+  padding: 10px 10px;
   background: #f4f7f8;
   border-radius: 8px;
 }
@@ -228,12 +229,12 @@ button:active {
 }
 
 #table_container{
-	padding-top: 10px;
-	padding-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	padding-left: 5px;
 	padding-right: 5px;
 
-	width: 80%;
+	width: 90%;
 	margin: auto;
 }
 
@@ -249,18 +250,9 @@ button:active {
   padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
-  text-align: left;
-  background-color: #4bc970;
+/*  text-align: left;
+*/  background-color: #4bc970;
   color: white;
-}
-.col_link {
-	width: 70%;
-}
-.col_pendekar {
-	width: 50%;
-}
-.col_click {
-	width: 20%;
 }
 
 
@@ -278,9 +270,19 @@ td {
 	/*text-align: left;*/
 }
 
+th.col_link {
+	width: 50%;
+}
+th.col_pendekar {
+	width: 70%;
+}
+th.col_click {
+	width: 10px;
+	text-align: right;
+}
 
 #footer_container {
-	background-color: powderblue;
+	background-color: white;
 	/*width: 80%;*/
 	margin: auto;
 
@@ -329,7 +331,7 @@ td {
 #footer_sub p {
 	font-size: 15px;
 	text-align: center;
-	color: white;
+	color: grey;
 }
 #logo_footer {
 	width: 50px;
